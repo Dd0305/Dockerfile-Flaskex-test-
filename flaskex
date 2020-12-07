@@ -1,0 +1,14 @@
+#base image
+FROM python:3.6
+#writer
+MAINTAINER Dd0305 "t.s.f.rus63@gmail.com"
+#clone local path
+RUN git clone https://github.com/anfederico/Flaskex
+#work directory app     
+WORKDIR /Flaskex
+#install packets    
+RUN pip install -r requirements.txt
+#start interpreter
+ENTRYPOINT ["python"]
+#start app
+CMD ["app.py"]
